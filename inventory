@@ -1,2 +1,2 @@
-52.91.102.74 ansible_shh_user=root ansible_ssh_pass=DevOps321
-54.237.109.195 ansible_shh_user=root ansible_ssh_pass=DevOps321
+52.91.102.74 ansible_connection=ssh ansible_user=root ansible_pass=DevOps321
+54.237.109.195 ansible_connection=ssh ansible_user=root ansible_pass=DevOps321
