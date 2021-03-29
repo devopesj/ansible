@@ -1,6 +1,6 @@
 - name: Demon on Play Variables
   hosts: a;;
-  vats:
+  vars:
     URL: play.example.com
 
   tasks:
