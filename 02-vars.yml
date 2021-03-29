@@ -4,8 +4,8 @@
     URL: play.example.com
   tasks:
     - name: Print URL
-        debug:
-          msg: URL = {{ URL }}
+      debug:
+        msg: URL = {{ URL }}
 
 - name: Demon on Task Variables
   hosts: all
