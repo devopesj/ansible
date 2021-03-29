@@ -1,0 +1,8 @@
+- name: Demon on Play Variables
+  hosts: a;;
+  vats:
+    URL: play.example.com
+
+  tasks:
+    -debug:
+      msg: URL = {{ URL }}
