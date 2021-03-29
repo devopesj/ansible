@@ -1,5 +1,5 @@
 - name: Demon on Play Variables
-  hosts: a;;
+  hosts: all
   vars:
     URL: play.example.com
 
