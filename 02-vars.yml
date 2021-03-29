@@ -4,5 +4,5 @@
     URL: play.example.com
 
   tasks:
-    -debug:
+    - debug:
       msg: URL = {{ URL }}
