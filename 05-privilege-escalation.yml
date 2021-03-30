@@ -1,9 +1,11 @@
 - name: Demo on privilege escalation
   hosts: all
+  become: yes
+  #become can be decalred on tasks level as well, so only that task will be executed as sudo, otherwise will be normal
   tasks:
     - shell: id
       register: out
-      become: yes
+      #become: yes
 
     - debug:
         msg: "{{out.stdout}}"
