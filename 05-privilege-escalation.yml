@@ -1,10 +1,9 @@
 - name: Demo on privilege escalation
   hosts: all
-  become: yes
   tasks:
     - shell: id
       register: out
-
+        become: yes
 
     - debug:
-      msg: "{{out.stdout}}"
+        msg: "{{out.stdout}}"
