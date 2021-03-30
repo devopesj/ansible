@@ -1,11 +1,6 @@
 - name: Demo on Conditions
   hosts: all
   tasks:
-    - name: execute if it is a centos machine
+    - name: execute if centos machine
       debug:
-        - msg: I am centos
-
-
-    - name: execute if it is debian machine
-      debug:
-        - msg: I am debian
+        msg: I am centos
