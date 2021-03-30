@@ -8,8 +8,8 @@
         - redhat
 
 
-     - name: execute if debiam machine
-       debug:
-         msg: I am debian
+    - name: execute if debiam machine
+      debug:
+        msg: I am debian
       tags:
         - debian
