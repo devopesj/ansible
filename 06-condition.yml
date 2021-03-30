@@ -4,3 +4,8 @@
     - name: execute if centos machine
       debug:
         msg: I am centos
+
+
+    - name: execute if debiam machine
+      debug:
+        msg: I am debian
