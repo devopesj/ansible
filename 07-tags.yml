@@ -1,6 +1,6 @@
 - name: Demo on Tags
   hosts: all
-    tasks:
+  tasks:
     - name: execute if centos machine
       debug:
         msg: I am centos
