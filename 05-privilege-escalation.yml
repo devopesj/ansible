@@ -3,7 +3,7 @@
   tasks:
     - shell: id
       register: out
-        become: yes
+      become: yes
 
     - debug:
         msg: "{{out.stdout}}"
