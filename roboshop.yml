@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   tasks:
-    - name: Import Frontend
+    - name: Import frontend
       ansible.builtin.import_role:
         name: frontend
       tags:
