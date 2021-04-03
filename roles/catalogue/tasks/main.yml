@@ -1,0 +1,7 @@
+- name: Print
+  debug:
+    msg: Hello from Catalgue
+
+- name: Print1
+  debug:
+    msg: Hello from CATALOGUE
