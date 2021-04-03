@@ -1,4 +1,7 @@
-- name: Install Catalogue
-  ansible.builtin.yum:
-    name: nginx
-    state: present
+- name: Print
+  debug:
+    msg: Hello from Catalgue
+
+- name: Print1
+  debug:
+    msg: Hello from CATALOGUE
