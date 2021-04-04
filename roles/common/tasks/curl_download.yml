@@ -1,7 +1,7 @@
 - name: Download {{ APP }} Component
   get_url:
     url: "{{URL}}"
-    dest: /etc/foo.conf
+    dest: /tmp/{{APP}}.zip
 
 - name: Remove old content
   file:
