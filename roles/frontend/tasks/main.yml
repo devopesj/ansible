@@ -4,7 +4,7 @@
     state: present
 
 - name: Download {{ APP }} Component
-  include_roles:
+  include_role:
     name: common
     tasks_from: curl_download
   vars:
