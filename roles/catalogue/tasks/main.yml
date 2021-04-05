@@ -14,3 +14,24 @@
     URL: "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
     EXTRACT_DIR: /home/roboshop/catalogue
     APP_USER: root
+
+- name: Install NodeJS Modules
+  community.general.npm:
+    path: /home/roboshop/catalogue
+  become_user: roboshop
+
+- name: Setup SystemD script for Catalogue Servic
+  ansible.builtin.replace:
+    path: /home/roboshop/catalogue/systemd.service
+      regexp: 'MONGO_DNSNAME'
+      replace: "mongodb-{{ENV}}.samdevops.tk
+
+- name: Setup SystemD script
+  shell: mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+
+- name: Start Catalogue Service
+  systemd:
+    name: catalogue
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
