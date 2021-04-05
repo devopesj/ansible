@@ -28,10 +28,3 @@
 
 - name: Setup SystemD script
   shell: mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
-
-#- name: Start Catalogue Service
-#  systemd:
-#    name: catalogue
-#    status: restarted
-#    enabled: yes
-#    daemon_reload: yes
