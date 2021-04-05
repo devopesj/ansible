@@ -32,5 +32,6 @@
 - name: Start Catalogue Service
   systemd:
     name: catalogue
-    state: restarted
+    status: restarted
     enabled: yes
+    daemon_reload: yes
