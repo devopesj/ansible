@@ -12,5 +12,5 @@
     tasks_from: curl_download
   vars:
     URL: "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
-    EXTRACT_DIR: /home/roboshop/catalogue/catalogue-main
+    EXTRACT_DIR: /home/roboshop/catalogue
     APP_USER: root
