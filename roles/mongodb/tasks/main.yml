@@ -14,4 +14,16 @@
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
+- name: Start MongoDB Service
+  systemd:
+    name: mongod
+    state: restarted
+    enabled: yes
 
+- name: Download {{ APP }} Schema
+  include_role:
+    name: common
+    tasks_from: curl_download
+  vars:
+    URL: "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
+    EXTRACT_DIR: /tmp
