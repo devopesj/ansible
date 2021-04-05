@@ -10,7 +10,7 @@
 
 - name: Create directory for {{ APP }} Component
   file:
-    path: "{{ EXTRACT_DIR }}"
+    path: "{{EXTRACT_DIR}}"
     state: directory
   become_user: "{{APP_USER}}"
 
