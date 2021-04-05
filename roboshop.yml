@@ -8,6 +8,12 @@
       tags: frontend
       when: APP == "frontend"
 
+    - name: Import MongoDB
+      ansible.builtin.import_role:
+        name: mongodb
+      tags: mongodb
+      when: APP == "mongodb"
+
     - name: Import Catalogue
       ansible.builtin.import_role:
         name: catalogue
