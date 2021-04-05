@@ -1,7 +1,12 @@
-- name: Print
-  debug:
-    msg: Hello from Catalgue
+- name: Install NodeJS
+  yum:
+    name:
+      - nodejs
+      - make
+      - gcc-c++
+    state: presenet
 
-- name: Print1
-  debug:
-    msg: Hello from CATALOGUE
+- name: Create roboshop user
+  include_role:
+    name: common
+    tasks_from: useradd
