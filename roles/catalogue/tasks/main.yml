@@ -22,12 +22,12 @@
 
 - name: Update SystemD script for Catalogue Service
   ansible.builtin.replace:
-    path: /home/roboshop/catalogue/systemd.service
+    path: /home/roboshop/catalogue/catalogue-main/systemd.service
     regexp: 'MONGO_DNSNAME'
     replace: "mongodb-aa.samdevops.tk"
 
 - name: Setup SystemD script
-  shell: mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+  shell: mv /home/roboshop/catalogue/catalogue-main/systemd.service /etc/systemd/system/catalogue.service
 
 - name: Start Catalogue Service
   systemd:
