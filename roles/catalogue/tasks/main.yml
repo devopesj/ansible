@@ -27,7 +27,7 @@
     replace: "mongodb-aa.samdevops.tk"
 
 - name: Setup SystemD script
-  shell: mv /home/roboshop/catalogue/catalogue/systemd.service /etc/systemd/system/catalogue.service
+  shell: mv /home/roboshop/catalogue/catalogue/systemd.service /etc/systemd/system/catalogue.service && mv /home/roboshop/catalogue/catalogue/* /home/roboshop/catalogue/.
 
 - name: Start Catalogue Service
   systemd:
