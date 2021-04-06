@@ -1,31 +1,28 @@
 - name: Download {{ APP }} Component
   get_url:
     url: "{{URL}}"
-    dest: /tmp/{{COMPONENT}}.zip
+    dest: /tmp/{{APP}}.zip
 
 - name: Remove old content
   file:
     path: "{{EXTRACT_DIR}}"
     state: absent
 
-- name: Create directory for {{ COMPONENT }} Component
+- name: Create directory for {{ APP }} Component
   file:
     path: "{{EXTRACT_DIR}}"
     state: directory
-#  become_user: "{{ APP_USER }}"
+  become_user: "{{ APP_USER }}"
 
-- name: Unarchive {{ COMPONENT }} Component
+- name: Unarchive {{ APP }} Component
   ansible.builtin.unarchive:
-    src: /tmp/{{COMPONENT}}.zip
+    src: /tmp/{{APP}}.zip
     dest: "{{EXTRACT_DIR}}"
     remote_src: yes
-#  become_user: "{{ APP_USER }}"
-
-- name: Move component Directory
-  shell: mv {{EXTRACT_DIR}}/{{COMPONENT}}-main {{EXTRACT_DIR}}/{{COMPONENT}}
+  become_user: "{{ APP_USER }}"
 
 - name: Move Htdocs Directory
-  shell: mv /usr/share/nginx/frontend/static/* /usr/share/nginx/frontend/.
+  shell: mv /usr/share/nginx/frontend/static/* /usr/share/nginx/html/.
   when: COMPONENT == "frontend"
 #  #Decided to use shell command over ansible module, since we have static dir which is part of html dir causing the
 #  recursive problem for ansible module
