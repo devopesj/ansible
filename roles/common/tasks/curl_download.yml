@@ -21,6 +21,9 @@
     remote_src: yes
 #  become_user: "{{ APP_USER }}"
 
+- name: Move component Directory
+  shell: mv {{EXTRACT_DIR}}/{{COMPONENT}}-main {{EXTRACT_DIR}}/{{COMPONENT}}
+
 - name: Move Htdocs Directory
   shell: mv /usr/share/nginx/html/frontend-main/static/* /usr/share/nginx/html/.
   when: COMPONENT == "frontend"
