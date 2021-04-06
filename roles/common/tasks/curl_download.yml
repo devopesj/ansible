@@ -5,7 +5,7 @@
 
 - name: Remove old content
   file:
-    path: "{{COMPONENT_DIR}}"
+    path: "{{EXTRACT_DIR}}"
     state: absent
 
 - name: Create directory for {{ COMPONENT }} Component
