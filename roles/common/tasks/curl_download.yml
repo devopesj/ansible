@@ -8,11 +8,11 @@
     path: "{{EXTRACT_DIR}}"
     state: absent
 
-- name: Create directory for {{ APP }} Component
-  file:
-    path: "{{EXTRACT_DIR}}"
-    state: directory
-  become_user: "{{ APP_USER }}"
+#- name: Create directory for {{ APP }} Component
+#  file:
+#    path: "{{EXTRACT_DIR}}"
+#    state: directory
+#  become_user: "{{ APP_USER }}"
 
 - name: Unarchive {{ APP }} Component
   ansible.builtin.unarchive:
@@ -23,6 +23,6 @@
 
 - name: Move Htdocs Directory
   shell: mv /usr/share/nginx/frontend-main/static/* /usr/share/nginx/html/.
-  when: COMPONENT == "frontend"
+  when: APP == "frontend"
 #  #Decided to use shell command over ansible module, since we have static dir which is part of html dir causing the
 #  recursive problem for ansible module
