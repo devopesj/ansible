@@ -22,7 +22,7 @@
   become_user: "{{ APP_USER }}"
 
 - name: Move Htdocs Directory
-  shell: mv /usr/share/nginx/frontend/static/* /usr/share/nginx/html/.
+  shell: mv /usr/share/nginx/frontend/frontend-main/static/* /usr/share/nginx/html/.
   when: COMPONENT == "frontend"
 #  #Decided to use shell command over ansible module, since we have static dir which is part of html dir causing the
 #  recursive problem for ansible module
