@@ -18,7 +18,6 @@
 - name: Install NodeJS Modules
   community.general.npm:
     path: /home/roboshop/catalogue
-  become:
   become_user: roboshop
 #To resolve issue with catalogue not working i had to install npm in /home/roboshop/catalogue manually then restart catalogue service
 
