@@ -26,7 +26,7 @@
 
 - name: Move Htdocs Directory
  # shell: mv /usr/share/nginx/frontend-main /usr/share/nginx/html
-  shell: mv /usr/share/nginx/frontend-main/static/* /usr/share/nginx/html/.
+  shell: mv /usr/share/nginx/html/static/* /usr/share/nginx/html/.
   when: APP == "frontend"
 #  #Decided to use shell command over ansible module, since we have static dir which is part of html dir causing the
 #  recursive problem for ansible module
