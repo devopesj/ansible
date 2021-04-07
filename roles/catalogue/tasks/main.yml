@@ -16,10 +16,13 @@
     APP_USER: roboshop
 
 - name: Install NodeJS Modules
-  community.general.npm:
+  npm:
     path: /home/roboshop/catalogue
-  become_user: roboshop
+    become_user: roboshop
 #To resolve issue with catalogue not working i had to install npm in /home/roboshop/catalogue manually then restart catalogue service
+
+#- name: npm install
+#  shell: cd /home/roboshop/catalogue && npm install
 
 - name: Update SystemD script for Catalogue Service
   ansible.builtin.replace:
