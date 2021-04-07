@@ -20,7 +20,7 @@
     path: /home/roboshop/catalogue
 #    executable: /bin/npm
 #    unsafe_perm: yes
-     APP_USER: roboshop
+  become_user: roboshop
   #To resolve issue with catalogue not working i had to install npm in /home/roboshop/catalogue manually then restart catalogue service
 
 - name: Update SystemD script for Catalogue Service
