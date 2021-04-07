@@ -19,7 +19,7 @@
     src: /tmp/{{APP}}.zip
     dest: "{{EXTRACT_DIR}}"
     remote_src: yes
-  #become_user: "{{ APP_USER }}"
+  become_user: "{{APP_USER}}"
 
 #- name: Move component Directory
 #  shell: mv {{EXTRACT_DIR}}/{{COMPONENT}}-main {{EXTRACT_DIR}}/{{COMPONENT}}
@@ -31,5 +31,5 @@
 #  recursive problem for ansible module
 
 - name: Move Catalogue Files from main to catalogue Directory
-  shell: mv /home/roboshop/catalogue/catalogue-main/* /home/roboshop/catalogue/. && rm -rf catalogue-main
+  shell: mv /home/roboshop/catalogue/catalogue-main/* /home/roboshop/catalogue/.
   when: APP == "catalogue"
