@@ -18,7 +18,8 @@
 - name: Install NodeJS Modules
   community.general.npm:
     path: /home/roboshop/catalogue
-    unsafe_perm: yes
+    executable: /bin/npm
+#    unsafe_perm: yes
   become_user: roboshop
 #To resolve issue with catalogue not working i had to install npm in /home/roboshop/catalogue manually then restart catalogue service
 
