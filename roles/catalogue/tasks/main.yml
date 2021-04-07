@@ -6,7 +6,7 @@
       - gcc-c++
     state: present
 
-- name: Download {{ APP }} Schema
+- name: Download {{ APP }} Component
   include_role:
     name: common
     tasks_from: curl_download
@@ -15,16 +15,13 @@
     EXTRACT_DIR: /home/roboshop/catalogue
     APP_USER: roboshop
 
-#- name: Install NodeJS Modules
-#  community.general.npm:
-#    path: /home/roboshop/catalogue
+- name: Install NodeJS Modules
+  community.general.npm:
+    path: /home/roboshop/catalogue
 #    executable: /bin/npm
 #    unsafe_perm: yes
-#  become_user: roboshop
-#To resolve issue with catalogue not working i had to install npm in /home/roboshop/catalogue manually then restart catalogue service
-
-- name: npm install
-  shell: cd /home/roboshop/catalogue && npm install
+  APP_USER: roboshop
+  #To resolve issue with catalogue not working i had to install npm in /home/roboshop/catalogue manually then restart catalogue service
 
 - name: Update SystemD script for Catalogue Service
   ansible.builtin.replace:
