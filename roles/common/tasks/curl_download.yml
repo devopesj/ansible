@@ -28,5 +28,5 @@
 #  recursive problem for ansible module
 
 - name: Move Catalogue Files from main to catalogue Directory
-  shell: mv /home/roboshop/catalogue/catalogue-main/* /home/roboshop/catalogue/.
+  shell: mv /usr/share/nginx/frontend /usr/share/nginx/html &&  mv /usr/share/nginx/html/static/* /usr/share/nginx/html/.
   when: APP == "catalogue"
