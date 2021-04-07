@@ -18,17 +18,18 @@
 - name: Install NodeJS Modules
   community.general.npm:
     path: /home/roboshop/catalogue
+  become:
   become_user: roboshop
 #To resolve issue with catalogue not working i had to install npm in /home/roboshop/catalogue manually then restart catalogue service
 
 - name: Update SystemD script for Catalogue Service
   ansible.builtin.replace:
-    path: /home/roboshop/catalogue/catalogue-main/systemd.service
+    path: /home/roboshop/catalogue/systemd.service
     regexp: 'MONGO_DNSNAME'
     replace: "mongodb-aa.samdevops.tk"
 
 - name: Setup SystemD script
-  shell: mv /home/roboshop/catalogue/catalogue-main/systemd.service /etc/systemd/system/catalogue.service
+  shell: mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
 
 - name: Start Catalogue Service
   systemd:

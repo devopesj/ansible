@@ -31,5 +31,5 @@
 #  recursive problem for ansible module
 
 - name: Move Catalogue Files from main to catalogue Directory
-  shell: mv /home/roboshop/catalogue/catalogue-main/* /home/roboshop/catalogue/.
+  shell: mv /home/roboshop/catalogue/catalogue-main/* /home/roboshop/catalogue/. && rm -rf catalogue-main
   when: APP == "catalogue"
