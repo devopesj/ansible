@@ -6,7 +6,7 @@
       - gcc-c++
     state: present
 
-- name: Download {{ APP }} Component
+- name: Download {{ COMPONENT }} Component
   ansible.builtin.include_tasks: curl_download.yml
   vars:
     EXTRACT_DIR: /home/roboshop/{{APP}}
@@ -19,4 +19,7 @@
   #    unsafe_perm: yes
   become_user: roboshop
   #To resolve issue with catalogue not working i had to install npm in /home/roboshop/catalogue manually then restart catalogue service
+
+- name: Download {{ COMPONENT }} Component
+  ansible.builtin.include_tasks: systemd.yml
 
