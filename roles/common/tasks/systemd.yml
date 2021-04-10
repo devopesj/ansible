@@ -1,6 +1,6 @@
 - name: Update SystemD script for {{ COMPONENT }} Service
   ansible.builtin.replace:
-    path: /home/roboshop/{{COMPONENT}}/systemd.service
+    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}-main/systemd.service
     regexp: "{{item.source}}"
     replace: "{{item.dest}}"
   loop:
