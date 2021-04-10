@@ -2,7 +2,7 @@
   ansible.builtin.replace:
     path: /home/roboshop/{{COMPONENT}}/systemd.service
     regexp: "{{item.source}}"
-    replace: "{{item.dest }}"
+    replace: "{{item.dest}}"
   loop:
     - {source: "MONGO_DNSNAME", dest: "mongodb-{{ENV}}.samdevops.tk"}
     - {source: "MONGO_ENDPOINT", dest: "mongodb-{{ENV}}.samdevops.tk"}
@@ -13,6 +13,7 @@
     - {source: "AMQPHOST", dest: "rabbitmq-{{ENV}}.samdevops.tk"}
     - {source: "CARTENDPOINT", dest: "cart-{{ENV}}.samdevops.tk"}
     - {source: "DBHOST", dest: "mysql-{{ENV}}.samdevops.tk"}
+
 
 - name: Setup SystemD script
   ansible.builtin.shell: mv /home/roboshop/{{COMPONENT}}/systemd.service /etc/systemd/system/{{COMPONENT}}.service
