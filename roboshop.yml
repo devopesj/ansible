@@ -19,3 +19,10 @@
         name: catalogue
       tags: catalogue
       when: APP == "catalogue"
+
+    - name: Import Redis
+      ansible.builtin.import_role:
+        name: redis
+      tags: redis
+      when: APP == "redis"
+
