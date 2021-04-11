@@ -32,5 +32,5 @@
 #  recursive problem for ansible module
 
 - name: Move {{COMPONENT}} Files from {{COMPONENT}}-main to {{COMPONENT}} Directory
-  ansible.builtin.shell: mv /home/roboshop/catalogue/catalogue-main/* /home/roboshop/catalogue/.
+  ansible.builtin.shell: mv /home/roboshop/{{COMPONENT}}/{{COMPONENT}}-main/* /home/roboshop/{{COMPONENT}}/.
   when: COMPONENT == "catalogue" or COMPONENT == "user" or COMPONENT == "cart" or COMPONENT == "shipping" or COMPONENT == "payment"
