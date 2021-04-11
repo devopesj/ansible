@@ -14,7 +14,7 @@
 
 - name: Install NodeJS Modules
   community.general.npm:
-    path: /home/roboshop/catalogue
+    path: /home/roboshop/{{COMPONENT}}
   #    executable: /bin/npm
   #    unsafe_perm: yes
   become_user: roboshop
