@@ -21,7 +21,7 @@
 
 - name: Check if DB has been configured already
   shell: echo "show databases;" | mysql -uroot -ppassword
-  ignore_error: yes
+  ignore_errors: yes
 
 - name: Grab default MySQL password
   shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}'
