@@ -33,4 +33,4 @@
 
 - name: Move {{COMPONENT}} Files from {{COMPONENT}}-main to {{COMPONENT}} Directory
   ansible.builtin.shell: mv /home/roboshop/{{COMPONENT}}/{{COMPONENT}}-main/* /home/roboshop/{{COMPONENT}}/.
-  when: COMPONENT == "catalogue" or COMPONENT == "user" or COMPONENT == "cart" or COMPONENT == "shipping" or COMPONENT == "payment"
+  when: COMPONENT == "catalogue" or COMPONENT == "user" or COMPONENT == "cart" or COMPONENT == "shipping" or COMPONENT == "payment" or COMPONENT == "mysql"
