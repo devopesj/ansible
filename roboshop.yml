@@ -41,6 +41,5 @@
     - name: Import MySQL
       ansible.builtin.import_role:
         name: mysql
-      tags: msql
+      tags: mysql
       when: APP == "mysql"
-
