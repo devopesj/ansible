@@ -31,6 +31,10 @@
 #  #Decided to use shell command over ansible module, since we have static dir which is part of html dir causing the
 #  recursive problem for ansible module
 
-- name: Move {{COMPONENT}} Files from {{COMPONENT}}-main to {{COMPONENT}} Directory
+- name: Move {{COMPONENT}} Files from home/roboShop/{{COMPONENT}}/{{COMPONENT}}-main to home/roboshop/{{COMPONENT}} Directory
   ansible.builtin.shell: mv /home/roboshop/{{COMPONENT}}/{{COMPONENT}}-main/* /home/roboshop/{{COMPONENT}}/.
-  when: COMPONENT == "catalogue" or COMPONENT == "user" or COMPONENT == "cart" or COMPONENT == "shipping" or COMPONENT == "payment" or COMPONENT == "mysql"
+  when: COMPONENT == "catalogue" or COMPONENT == "user" or COMPONENT == "cart" or COMPONENT == "shipping" or COMPONENT == "payment"
+
+- name: Move {{COMPONENT}} Files from /tmp/{{COMPONENT}}/{{COMPONENT}}-main to /tmp/{{COMPONENT}} Directory
+  ansible.builtin.shell: mv /tmp/{{COMPONENT}}/{{COMPONENT}}-main/* /tmp/{{COMPONENT}}/.
+  when: COMPONENT == "mysql"
