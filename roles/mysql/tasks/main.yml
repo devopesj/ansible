@@ -1,0 +1,27 @@
+- name: Setup MySQL Repo
+  anible.builtin.copy:
+    src: mysql.repo
+    dest: /etc/yum.repos.d/mysql.repo
+
+- name: Remove mariad-libs
+  ansible.builtin.yum:
+    name: mariadb-libs
+    state: absent
+
+- name: Intall MySQL Server
+  ansible.builtin.yum:
+    name: mysql-community-server
+    state: present
+
+- name: Start MySQL Service
+  ansible.builtin.systemd:
+    name: mysqld
+    state: started
+    enabled: yes
+
+- name: Check if DB has been configured already
+  shell: echo "show databases;" | mysql -uroot -ppassword
+  ignore_error: yes
+
+- name: Grab default MySQL password
+  shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}'
