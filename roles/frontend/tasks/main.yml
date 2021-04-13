@@ -13,6 +13,11 @@
     APP_USER: root
     COMPONENT_DIR: /usr/share/nginx/html
 
+- name: Copy Nginx Congig File
+  template:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
+
 - name: Start Nginx Service
   systemd:
     name: nginx
