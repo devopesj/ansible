@@ -43,3 +43,15 @@
         name: mysql
       tags: mysql
       when: APP == "mysql"
+
+    - name: Import Shipping
+      ansible.builtin.import_role:
+        name: shipping
+      tags: shipping
+      when: APP == "shipping"
+
+    - name: Import Payment
+      ansible.builtin.import_role:
+        name: payment
+      tags: payment
+      when: APP == "payment"
