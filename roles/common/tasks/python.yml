@@ -29,5 +29,8 @@
     regexp: "^gid"
     line: "uid={{RS_GID}}"
 
+- name: Download {{ COMPONENT }} Component
+  ansible.builtin.include_tasks: systemd.yml
+
 
 
