@@ -49,3 +49,15 @@
         name: shipping
       tags: shipping
       when: APP == "shipping"
+
+    - name: Import RabbitMQ
+      ansible.builtin.import_role:
+        name: rabbitmq
+      tags: rabbitmq
+      when: APP == "rabbitmq"
+
+    - name: Import Payment
+      ansible.builtin.import_role:
+        name: payment
+      tags: payment
+      when: APP == "payment"
