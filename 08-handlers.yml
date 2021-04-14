@@ -11,6 +11,7 @@
       template:
         src: nginx.conf
         dest: /etc/nginx/nginx.conf
+      notify: Restart Nginx
 
 
     - name: Started Nginx
@@ -18,3 +19,8 @@
         name: nginx
         state: started
 
+  handlers:
+    - name: Restart Nginx
+        systemd:
+          name: nginx
+          state: restarted
