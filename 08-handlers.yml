@@ -2,17 +2,19 @@
   hosts: all
   become: yes
   tasks:
-    - name: Install Nginx
+    - name: Install nginx
       yum:
         name: nginx
         state: present
 
-    - name: Update nginx port number
+    - name: Update nginx Port Number
       template:
         src: nginx.conf
         dest: /etc/nginx/nginx.conf
 
-    - name: Retart nginx
+
+    - name: ReStarted Nginx
       systemd:
         name: nginx
-        state: restarted
+        state: retarted
+
