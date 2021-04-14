@@ -7,11 +7,7 @@
         name: nginx
         state: present
 
-
-    - Update Nginx Port Number
-
-
     - name: Start nginx
       systemd:
         name: nginx
-        state: restarted
+        state: started
