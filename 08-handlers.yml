@@ -16,5 +16,5 @@
     - name: Started Nginx
       systemd:
         name: nginx
-        state: start
+        state: started
 
